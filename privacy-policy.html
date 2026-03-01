@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — FreelanceFlow</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F0EDE8;
+      color: #1A1917;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1B4332;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background: #2D6A4F;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #E8F4EE;
+      color: #2D6A4F;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #2D6A4F;
+      border-radius: 50%;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1A1917;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #8A8680;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .update-date {
+      font-size: 13px;
+      color: #B5B0A8;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    /* TOC */
+    .toc {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #E8E4DE;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #8A8680;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: #2D6A4F;
+      text-decoration: none;
+      padding: 5px 0;
+      border-bottom: 1px solid #F5F4F1;
+    }
+
+    .toc a:last-child { border-bottom: none; }
+    .toc a:hover { color: #1B4332; font-weight: 600; }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #E8E4DE;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #F0EDE8;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background: #E8F4EE;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .card-header h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1A1917;
+    }
+
+    .card-header p {
+      font-size: 12px;
+      color: #8A8680;
+      margin-top: 2px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #8A8680;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: 16px;
+    }
+
+    .section-label:first-child { margin-top: 0; }
+
+    p {
+      font-size: 14px;
+      color: #3D3B38;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .item-list {
+      list-style: none;
+      margin: 8px 0;
+    }
+
+    .item-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #3D3B38;
+      line-height: 1.6;
+      padding: 6px 0;
+      border-bottom: 1px solid #F5F4F1;
+    }
+
+    .item-list li:last-child { border-bottom: none; }
+
+    .item-list li::before {
+      content: '•';
+      color: #2D6A4F;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .highlight-box {
+      background: #E8F4EE;
+      border: 1px solid #B7D9C6;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #1B4332;
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+
+    .highlight-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .warning-box {
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #92400E;
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .right-item {
+      background: #F5F4F1;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .right-item .right-icon {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .right-item h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A1917;
+      margin-bottom: 3px;
+    }
+
+    .right-item p {
+      font-size: 11px;
+      color: #8A8680;
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #1B4332, #2D6A4F);
+      border-radius: 16px;
+      padding: 24px;
+      color: white;
+      margin-top: 8px;
+    }
+
+    .contact-box h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .contact-row:last-child { margin-bottom: 0; }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .contact-row span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-row a {
+      color: #A8E6CF;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .gdpr-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.9);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #B5B0A8;
+    }
+
+    @media (max-width: 480px) {
+      .rights-grid { grid-template-columns: 1fr; }
+      h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💼</div>
+  <div>
+    <h1>FreelanceFlow</h1>
+    <p>di Antonio Mazzaro</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="badge">Privacy Policy</div>
+  <h2>Informativa sulla Privacy</h2>
+  <p class="subtitle">Come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali.</p>
+  <p class="update-date">Ultimo aggiornamento: 01 Marzo 2026</p>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Indice</div>
+    <a href="#titolare">1. Titolare del Trattamento</a>
+    <a href="#dati">2. Dati Raccolti</a>
+    <a href="#finalita">3. Finalità del Trattamento</a>
+    <a href="#base">4. Base Giuridica</a>
+    <a href="#conservazione">5. Conservazione e Sicurezza</a>
+    <a href="#condivisione">6. Condivisione dei Dati</a>
+    <a href="#diritti">7. Diritti dell'Utente</a>
+    <a href="#minori">8. Dati dei Minori</a>
+    <a href="#notifiche">9. Notifiche Push</a>
+    <a href="#modifiche">10. Modifiche alla Policy</a>
+    <a href="#contatti">11. Contatti</a>
+  </div>
+
+  <!-- 1. Titolare -->
+  <div class="card" id="titolare">
+    <div class="card-header">
+      <div class="card-icon">🏢</div>
+      <div>
+        <h3>1. Titolare del Trattamento</h3>
+        <p>Chi è responsabile dei tuoi dati</p>
+      </div>
+    </div>
+    <p>Il Titolare del trattamento dei dati personali raccolti tramite l'applicazione FreelanceFlow è:</p>
+    <div class="highlight-box">
+      <strong>Antonio Mazzaro</strong>
+      Email: antonio.mazzaro.junto@gmail.com<br>
+      Paese: Italia
+    </div>
+    <p>Per qualsiasi domanda relativa al trattamento dei tuoi dati personali, puoi contattarci all'indirizzo email indicato sopra.</p>
+  </div>
+
+  <!-- 2. Dati Raccolti -->
+  <div class="card" id="dati">
+    <div class="card-header">
+      <div class="card-icon">📋</div>
+      <div>
+        <h3>2. Dati Raccolti</h3>
+        <p>Quali informazioni trattiamo</p>
+      </div>
+    </div>
+
+    <div class="section-label">Dati forniti direttamente dall'utente</div>
+    <ul class="item-list">
+      <li>Nome e cognome</li>
+      <li>Indirizzo email</li>
+      <li>Password (conservata in forma cifrata, mai accessibile in chiaro)</li>
+      <li>Dati professionali (professione, valuta preferita)</li>
+      <li>Dati clienti inseriti dall'utente (nome, informazioni di contatto)</li>
+      <li>Dati progetti (nome, descrizione, tariffa oraria, colore)</li>
+      <li>Sessioni di lavoro (orario di inizio e fine, durata, importi)</li>
+      <li>Fatture generate (dati cliente, voci, importi, stato)</li>
+    </ul>
+
+    <div class="section-label">Dati raccolti automaticamente</div>
+    <ul class="item-list">
+      <li>Dati di utilizzo dell'app (funzionalità utilizzate, frequenza)</li>
+      <li>Informazioni tecniche del dispositivo (sistema operativo, versione app)</li>
+      <li>Log di errori anonimi per migliorare la stabilità dell'app</li>
+    </ul>
+
+    <div class="highlight-box">
+      <strong>✅ Cosa NON raccogliamo</strong>
+      Non raccogliamo posizione geografica, contatti del telefono, foto o media,
+      dati biometrici, né dati di terze parti a scopo pubblicitario.
+    </div>
+  </div>
+
+  <!-- 3. Finalità -->
+  <div class="card" id="finalita">
+    <div class="card-header">
+      <div class="card-icon">🎯</div>
+      <div>
+        <h3>3. Finalità del Trattamento</h3>
+        <p>Perché utilizziamo i tuoi dati</p>
+      </div>
+    </div>
+    <ul class="item-list">
+      <li>Creazione e gestione dell'account utente</li>
+      <li>Erogazione dei servizi dell'app (clienti, progetti, timer, fatture)</li>
+      <li>Sincronizzazione dei dati tra dispositivi tramite cloud sicuro</li>
+      <li>Invio di notifiche relative al timer attivo in background</li>
+      <li>Miglioramento dell'app tramite analisi anonima dell'utilizzo</li>
+      <li>Risposta alle richieste di assistenza tecnica</li>
+      <li>Adempimento di obblighi legali e fiscali</li>
+    </ul>
+  </div>
+
+  <!-- 4. Base Giuridica -->
+  <div class="card" id="base">
+    <div class="card-header">
+      <div class="card-icon">⚖️</div>
+      <div>
+        <h3>4. Base Giuridica</h3>
+        <p>Il fondamento legale del trattamento</p>
+      </div>
+    </div>
+    <ul class="item-list">
+      <li><strong>Esecuzione del contratto</strong> — per fornire i servizi richiesti (Art. 6.1.b GDPR)</li>
+      <li><strong>Consenso</strong> — per comunicazioni facoltative (Art. 6.1.a GDPR)</li>
+      <li><strong>Legittimo interesse</strong> — per migliorare i servizi e garantire la sicurezza (Art. 6.1.f GDPR)</li>
+      <li><strong>Obbligo legale</strong> — per adempiere a obblighi normativi fiscali (Art. 6.1.c GDPR)</li>
+    </ul>
+  </div>
+
+  <!-- 5. Conservazione -->
+  <div class="card" id="conservazione">
+    <div class="card-header">
+      <div class="card-icon">🔒</div>
+      <div>
+        <h3>5. Conservazione e Sicurezza</h3>
+        <p>Come proteggiamo i tuoi dati</p>
+      </div>
+    </div>
+
+    <div class="section-label">Periodo di conservazione</div>
+    <ul class="item-list">
+      <li>Dati account e contenuti: per tutta la durata dell'account attivo</li>
+      <li>Dopo la cancellazione: eliminazione entro 30 giorni, salvo obblighi legali</li>
+      <li>Log tecnici anonimi: massimo 90 giorni</li>
+      <li>Dati fiscali (se applicabile): fino a 10 anni per obbligo di legge italiano</li>
+    </ul>
+
+    <div class="section-label">Misure di sicurezza</div>
+    <ul class="item-list">
+      <li>Tutti i dati in transito protetti con crittografia TLS 1.3</li>
+      <li>Password conservate in forma hash (bcrypt) — mai accessibili in chiaro</li>
+      <li>Infrastruttura cloud Supabase con data center in conformità GDPR</li>
+      <li>Accesso ai dati limitato al solo personale autorizzato</li>
+      <li>Monitoraggio continuo per rilevare accessi non autorizzati</li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>⚠️ Fornitore cloud</strong>
+      I dati sono conservati su server di Supabase Inc. (USA), con trasferimento
+      dati regolato da Clausole Contrattuali Standard approvate dalla Commissione Europea,
+      in conformità all'Art. 46 GDPR.
+    </div>
+  </div>
+
+  <!-- 6. Condivisione -->
+  <div class="card" id="condivisione">
+    <div class="card-header">
+      <div class="card-icon">🤝</div>
+      <div>
+        <h3>6. Condivisione dei Dati</h3>
+        <p>Con chi condividiamo le informazioni</p>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <strong>🚫 I tuoi dati NON vengono venduti</strong>
+      Non vendiamo, cediamo o condividiamo i tuoi dati personali con terze parti
+      per scopi commerciali o pubblicitari.
+    </div>
+    <p>I dati possono essere condivisi esclusivamente con:</p>
+    <ul class="item-list">
+      <li><strong>Supabase Inc.</strong> — fornitore infrastruttura cloud e database (Responsabile del Trattamento ai sensi Art. 28 GDPR)</li>
+      <li><strong>Autorità competenti</strong> — solo quando richiesto dalla legge o da ordini giudiziari vincolanti</li>
+    </ul>
+  </div>
+
+  <!-- 7. Diritti -->
+  <div class="card" id="diritti">
+    <div class="card-header">
+      <div class="card-icon">🛡️</div>
+      <div>
+        <h3>7. Diritti dell'Utente</h3>
+        <p>I tuoi diritti ai sensi del GDPR</p>
+      </div>
+    </div>
+    <p>Ai sensi del Regolamento UE 2016/679 (GDPR), hai diritto a:</p>
+    <div class="rights-grid">
+      <div class="right-item">
+        <div class="right-icon">👁️</div>
+        <h4>Accesso</h4>
+        <p>Ottenere copia dei tuoi dati personali trattati</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">✏️</div>
+        <h4>Rettifica</h4>
+        <p>Correggere dati inesatti o incompleti</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">🗑️</div>
+        <h4>Cancellazione</h4>
+        <p>Richiedere l'eliminazione dei tuoi dati</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">⏸️</div>
+        <h4>Limitazione</h4>
+        <p>Limitare il trattamento in certi casi</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">📥</div>
+        <h4>Portabilità</h4>
+        <p>Ricevere i dati in formato strutturato</p>
+      </div>
+      <div class="right-item">
+        <div class="right-icon">🚫</div>
+        <h4>Opposizione</h4>
+        <p>Opporti al trattamento per legittimo interesse</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 16px;">
+      <strong>📬 Come esercitare i tuoi diritti</strong>
+      Scrivi a <a href="mailto:antonio.mazzaro.junto@gmail.com" style="color: #2D6A4F; font-weight: 600;">antonio.mazzaro.junto@gmail.com</a>.
+      Risponderemo entro 30 giorni dalla ricezione della richiesta.
+    </div>
+    <p style="margin-top: 12px;">Hai inoltre il diritto di presentare reclamo al
+      <a href="https://www.garanteprivacy.it" target="_blank" style="color: #2D6A4F; font-weight: 600;">
+        Garante per la Protezione dei Dati Personali
+      </a> (www.garanteprivacy.it).
+    </p>
+  </div>
+
+  <!-- 8. Minori -->
+  <div class="card" id="minori">
+    <div class="card-header">
+      <div class="card-icon">👶</div>
+      <div>
+        <h3>8. Dati dei Minori</h3>
+        <p>Protezione degli utenti under 18</p>
+      </div>
+    </div>
+    <p>FreelanceFlow è destinata <strong>esclusivamente a utenti maggiorenni</strong> (18 anni o più). Non raccogliamo consapevolmente dati personali di minori di 18 anni.</p>
+    <p>Se dovessimo venire a conoscenza di dati di minori raccolti inavvertitamente, provvederemo alla loro immediata cancellazione. Se sei un genitore e ritieni che tuo figlio minore abbia creato un account, contattaci immediatamente.</p>
+  </div>
+
+  <!-- 9. Notifiche -->
+  <div class="card" id="notifiche">
+    <div class="card-header">
+      <div class="card-icon">🔔</div>
+      <div>
+        <h3>9. Notifiche Push</h3>
+        <p>Come utilizziamo le notifiche</p>
+      </div>
+    </div>
+    <p>L'app utilizza notifiche push <strong>esclusivamente</strong> per avvisarti quando il timer è attivo in background, evitando che tu dimentichi sessioni aperte.</p>
+    <ul class="item-list">
+      <li>Le notifiche non contengono dati di terze parti</li>
+      <li>Non inviamo notifiche marketing senza consenso esplicito</li>
+      <li>Puoi disabilitare le notifiche in qualsiasi momento dalle Impostazioni del dispositivo</li>
+    </ul>
+  </div>
+
+  <!-- 10. Modifiche -->
+  <div class="card" id="modifiche">
+    <div class="card-header">
+      <div class="card-icon">📝</div>
+      <div>
+        <h3>10. Modifiche alla Policy</h3>
+        <p>Come ti informiamo dei cambiamenti</p>
+      </div>
+    </div>
+    <p>Ci riserviamo il diritto di modificare la presente informativa in qualsiasi momento per adeguarla a modifiche normative o ai nostri servizi.</p>
+    <ul class="item-list">
+      <li>Le modifiche saranno comunicate tramite notifica nell'app</li>
+      <li>Per modifiche sostanziali, ti invieremo anche una email</li>
+      <li>L'utilizzo continuato dell'app dopo la notifica costituisce accettazione</li>
+      <li>La data di "Ultimo aggiornamento" in cima alla pagina indica l'ultima versione</li>
+    </ul>
+  </div>
+
+  <!-- 11. Contatti -->
+  <div class="card" id="contatti">
+    <div class="card-header">
+      <div class="card-icon">📬</div>
+      <div>
+        <h3>11. Contatti</h3>
+        <p>Come raggiungerci</p>
+      </div>
+    </div>
+    <p>Per qualsiasi domanda relativa a questa informativa o al trattamento dei tuoi dati:</p>
+    <div class="contact-box">
+      <h4>Antonio Mazzaro</h4>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <span><a href="mailto:antonio.mazzaro.junto@gmail.com">antonio.mazzaro.junto@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🌍</div>
+        <span>Italia</span>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">⏱️</div>
+        <span>Risposta entro 30 giorni lavorativi</span>
+      </div>
+      <div class="gdpr-badge">
+        🇪🇺 Conforme al Regolamento UE 2016/679 (GDPR)
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  FreelanceFlow · di Antonio Mazzaro · Italia<br>
+  Conforme al Regolamento UE 2016/679 (GDPR) · Aggiornata il 01 Marzo 2026
+</footer>
+
+</body>
+</html>
