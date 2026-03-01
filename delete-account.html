@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elimina Account — FreelanceFlow</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F0EDE8;
+      color: #1A1917;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1B4332;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background: #2D6A4F;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FEE2E2;
+      color: #DC2626;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #DC2626;
+      border-radius: 50%;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1A1917;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #8A8680;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #E8E4DE;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #8A8680;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: #E8F4EE;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #2D6A4F;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1917;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: #8A8680;
+      line-height: 1.5;
+    }
+
+    .data-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #F0EDE8;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .data-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .deleted { background: #FEE2E2; }
+    .retained { background: #FEF3C7; }
+
+    .data-info h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A1917;
+      margin-bottom: 2px;
+    }
+
+    .data-info p {
+      font-size: 12px;
+      color: #8A8680;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .tag-deleted {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    .tag-retained {
+      background: #FEF3C7;
+      color: #D97706;
+    }
+
+    .email-box {
+      background: #E8F4EE;
+      border: 1.5px solid #2D6A4F;
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .email-icon {
+      width: 48px;
+      height: 48px;
+      background: #2D6A4F;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .email-content h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1B4332;
+      margin-bottom: 4px;
+    }
+
+    .email-content a {
+      color: #2D6A4F;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .email-content a:hover {
+      text-decoration: underline;
+    }
+
+    .email-content p {
+      font-size: 12px;
+      color: #2D6A4F;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+
+    .timeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 16px 0 8px;
+    }
+
+    .timeline-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: #2D6A4F;
+      border-radius: 50%;
+      margin: 0 auto 6px;
+    }
+
+    .timeline-line {
+      height: 2px;
+      background: #E8E4DE;
+      flex: 1;
+      margin-top: -18px;
+    }
+
+    .timeline-label {
+      font-size: 11px;
+      color: #8A8680;
+    }
+
+    .timeline-value {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1A1917;
+    }
+
+    .warning-box {
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #92400E;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+
+    .warning-box strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #B5B0A8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💼</div>
+  <div>
+    <h1>FreelanceFlow</h1>
+    <p>di Antonio Mazzaro</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="badge">Eliminazione Account</div>
+  <h2>Richiedi l'eliminazione del tuo account</h2>
+  <p class="subtitle">
+    Hai il diritto di richiedere la cancellazione del tuo account FreelanceFlow
+    e di tutti i dati personali associati, in conformità al GDPR (Reg. UE 2016/679).
+  </p>
+
+  <!-- METODO 1: Dall'app -->
+  <div class="card">
+    <div class="card-title">Metodo 1 — Dall'app (consigliato)</div>
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>Apri FreelanceFlow</h4>
+        <p>Assicurati di essere connesso con il tuo account.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>Vai alle Impostazioni</h4>
+        <p>Tocca le tue iniziali in alto a destra nella schermata Home per aprire le Impostazioni.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>Seleziona "Elimina account"</h4>
+        <p>Nella sezione Account, tocca "Elimina account" e conferma la tua scelta.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>Conferma l'eliminazione</h4>
+        <p>Leggi il riepilogo dei dati che verranno eliminati e tocca "Elimina account" per procedere.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- METODO 2: Via email -->
+  <div class="card">
+    <div class="card-title">Metodo 2 — Via email</div>
+    <p style="font-size: 13px; color: #8A8680; margin-bottom: 16px;">
+      Se non riesci ad accedere all'app o preferisci contattarci direttamente:
+    </p>
+    <div class="email-box">
+      <div class="email-icon">✉️</div>
+      <div class="email-content">
+        <h4>Scrivi a</h4>
+        <a href="mailto:antonio.mazzaro.junto@gmail.com?subject=Richiesta%20Eliminazione%20Account%20FreelanceFlow&body=Buongiorno%2C%0A%0ADesidero%20richiedere%20l'eliminazione%20del%20mio%20account%20FreelanceFlow%20e%20di%20tutti%20i%20dati%20associati.%0A%0AEmail%20account%3A%20%5Binserisci%20la%20tua%20email%5D%0A%0AGrazie">
+          antonio.mazzaro.junto@gmail.com
+        </a>
+        <p>Oggetto: "Richiesta Eliminazione Account FreelanceFlow"</p>
+      </div>
+    </div>
+    <div class="warning-box">
+      <strong>⏱ Tempi di risposta</strong>
+      Elaboriamo le richieste entro <strong>30 giorni lavorativi</strong> dalla ricezione.
+      Potremmo chiederti di verificare la tua identità prima di procedere.
+    </div>
+  </div>
+
+  <!-- DATI CHE VENGONO ELIMINATI -->
+  <div class="card">
+    <div class="card-title">Dati eliminati immediatamente</div>
+
+    <div class="data-row">
+      <div class="data-icon deleted">👤</div>
+      <div class="data-info">
+        <h4>Account e profilo <span class="tag tag-deleted">Eliminato</span></h4>
+        <p>Email, nome, password, preferenze (professione, valuta)</p>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-icon deleted">👥</div>
+      <div class="data-info">
+        <h4>Clienti <span class="tag tag-deleted">Eliminato</span></h4>
+        <p>Tutti i clienti e i loro dati inseriti nell'app</p>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-icon deleted">📁</div>
+      <div class="data-info">
+        <h4>Progetti <span class="tag tag-deleted">Eliminato</span></h4>
+        <p>Tutti i progetti, descrizioni, tariffe orarie</p>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-icon deleted">⏱</div>
+      <div class="data-info">
+        <h4>Sessioni di lavoro <span class="tag tag-deleted">Eliminato</span></h4>
+        <p>Tutto lo storico delle sessioni timer e i guadagni calcolati</p>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-icon deleted">🧾</div>
+      <div class="data-info">
+        <h4>Fatture <span class="tag tag-deleted">Eliminato</span></h4>
+        <p>Tutte le fatture generate e i relativi dati</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATI CONSERVATI -->
+  <div class="card">
+    <div class="card-title">Dati conservati temporaneamente</div>
+
+    <div class="data-row">
+      <div class="data-icon retained">📋</div>
+      <div class="data-info">
+        <h4>Log di sistema <span class="tag tag-retained">Max 90 giorni</span></h4>
+        <p>Log tecnici anonimi per la sicurezza del sistema. Non contengono dati personali identificativi.</p>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-icon retained">⚖️</div>
+      <div class="data-info">
+        <h4>Dati fiscali (se applicabile) <span class="tag tag-retained">Max 10 anni</span></h4>
+        <p>Solo se richiesto da obblighi legali fiscali italiani (D.P.R. 633/1972). In forma anonimizzata.</p>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #F0EDE8;">
+      <p style="font-size: 12px; color: #8A8680; margin-bottom: 12px;">Processo di eliminazione:</p>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 12px;">
+        <div style="text-align: center; flex: 1;">
+          <div style="width: 10px; height: 10px; background: #2D6A4F; border-radius: 50%; margin: 0 auto 4px;"></div>
+          <div style="color: #1A1917; font-weight: 600;">Richiesta</div>
+        </div>
+        <div style="height: 2px; background: #E8E4DE; flex: 1;"></div>
+        <div style="text-align: center; flex: 1;">
+          <div style="width: 10px; height: 10px; background: #2D6A4F; border-radius: 50%; margin: 0 auto 4px;"></div>
+          <div style="color: #1A1917; font-weight: 600;">Verifica</div>
+          <div style="color: #8A8680;">1-3 giorni</div>
+        </div>
+        <div style="height: 2px; background: #E8E4DE; flex: 1;"></div>
+        <div style="text-align: center; flex: 1;">
+          <div style="width: 10px; height: 10px; background: #2D6A4F; border-radius: 50%; margin: 0 auto 4px;"></div>
+          <div style="color: #1A1917; font-weight: 600;">Eliminazione</div>
+          <div style="color: #8A8680;">entro 30 gg</div>
+        </div>
+        <div style="height: 2px; background: #E8E4DE; flex: 1;"></div>
+        <div style="text-align: center; flex: 1;">
+          <div style="width: 10px; height: 10px; background: #DC2626; border-radius: 50%; margin: 0 auto 4px;"></div>
+          <div style="color: #DC2626; font-weight: 600;">Completato</div>
+          <div style="color: #8A8680;">Conferma email</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALTRI DIRITTI -->
+  <div class="card">
+    <div class="card-title">Altri diritti GDPR</div>
+    <p style="font-size: 13px; color: #8A8680; line-height: 1.6; margin-bottom: 12px;">
+      Oltre all'eliminazione, hai diritto a:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="background: #F5F4F1; border-radius: 12px; padding: 12px;">
+        <div style="font-size: 16px; margin-bottom: 4px;">📥</div>
+        <div style="font-size: 12px; font-weight: 600; color: #1A1917;">Portabilità dati</div>
+        <div style="font-size: 11px; color: #8A8680;">Esporta i tuoi dati</div>
+      </div>
+      <div style="background: #F5F4F1; border-radius: 12px; padding: 12px;">
+        <div style="font-size: 16px; margin-bottom: 4px;">✏️</div>
+        <div style="font-size: 12px; font-weight: 600; color: #1A1917;">Rettifica</div>
+        <div style="font-size: 11px; color: #8A8680;">Correggi i tuoi dati</div>
+      </div>
+      <div style="background: #F5F4F1; border-radius: 12px; padding: 12px;">
+        <div style="font-size: 16px; margin-bottom: 4px;">⏸️</div>
+        <div style="font-size: 12px; font-weight: 600; color: #1A1917;">Limitazione</div>
+        <div style="font-size: 11px; color: #8A8680;">Limita il trattamento</div>
+      </div>
+      <div style="background: #F5F4F1; border-radius: 12px; padding: 12px;">
+        <div style="font-size: 16px; margin-bottom: 4px;">🛡️</div>
+        <div style="font-size: 12px; font-weight: 600; color: #1A1917;">Reclamo</div>
+        <div style="font-size: 11px; color: #8A8680;">Garante Privacy IT</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #8A8680; margin-top: 14px;">
+      Per esercitare questi diritti contatta:
+      <a href="mailto:antonio.mazzaro.junto@gmail.com" style="color: #2D6A4F; font-weight: 600;">
+        antonio.mazzaro.junto@gmail.com
+      </a>
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  FreelanceFlow · di Antonio Mazzaro · Italia<br>
+  Conforme al Regolamento UE 2016/679 (GDPR)
+</footer>
+
+</body>
+</html>
